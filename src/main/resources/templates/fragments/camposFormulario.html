@@ -1,0 +1,36 @@
+<div th:fragment="camposFormulario (aprovado)">
+    <input 
+        type="hidden"
+        th:name="id"
+        name="id"
+        th:value="${comentario.id}"
+    >
+
+    <input 
+        type="hidden"
+        th:name="nome"
+        name="nome"
+        th:value="${comentario.nome}"
+    >
+
+    <input 
+        type="hidden"
+        th:name="email"
+        name="email"
+        th:value="${comentario.email}"
+    >
+
+    <input 
+        type="hidden"
+        th:name="texto"
+        name="texto"
+        th:value="${comentario.texto}"
+    >
+
+    <input 
+        type="hidden"
+        th:name="aprovado"
+        name="aprovado"
+        th:value="${aprovado}"
+    >
+</div>

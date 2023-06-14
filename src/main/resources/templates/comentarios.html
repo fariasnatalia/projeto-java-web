@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+  <body th:replace="~{layout :: layout(~{:: main})}">
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col" style="--bs-primary: #e6a756;--bs-primary-rgb: 230,167,86;">
+            <div class="shadow" style="width: 100%;min-height: 630px;margin-top: 119px;background-color: rgba(255,255,255,0.79);padding-bottom: 57px;margin-left: 0px;padding-right: 2px;">
+              <form 
+                action="#"
+                th:action="@{/comentarios/salvar}"
+                th:object="${form}"
+                method="POST"
+                style="padding-top: 70px;" 
+              >
+                <div class="form-group mb-3">
+                  <h1 class="text-center" style="color: var(--bs-link-hover-color);">Insira seus dados</h1>
+                </div>
+                <div class="form-group mb-3">
+                  <input 
+                    th:name="nome"
+                    class="form-control form-control-lg" 
+                    type="text" 
+                    style="width: 50%;margin-left: 25%;transform: perspective(0px);" 
+                    required="" 
+                    placeholder="Nome e Sobrenome" 
+                    name="nome"
+                  >
+                </div>
+                <div class="form-group mb-3">
+                  <input 
+                    th:name="email"
+                    class="form-control form-control-lg" 
+                    type="email" 
+                    style="width: 50%;margin-left: 25%;transform: perspective(0px);" 
+                    required="" 
+                    placeholder="Digite seu endereço de e-mail" 
+                    name="nome"
+                  >
+                </div>
+                <div class="form-group mb-3">
+                  <textarea 
+                    th:name="texto"
+                    class="form-control form-control-lg" 
+                    style="width: 50%;margin-left: 25%;min-height: 200px;" 
+                    placeholder="Deixe-nos o seu comentario"
+                    name="texto"
+                    required=""
+                  ></textarea>
+                </div>
+                <div class="form-group mb-3">
+                  <button class="btn btn-dark btn-lg" style="width: 50%;margin-left: 25%;background: var(--bs-link-hover-color);" type="submit">ENVIAR</button>
+                </div>
+              </form>
+
+              <div class="container" style="padding-top: 70px;">
+                <div class="row">
+                  <div th:replace="~{fragments/comentarios-adm :: comentarios-adm}"></div>
+
+                  <div th:replace="~{fragments/comentarios :: comentarios}" ></div>
+                </div>                
+              </div>
+            </div>
+          </div>
+        </div>    
+      </div>     
+    </main>
+  </body>
+</html>
